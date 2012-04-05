@@ -275,6 +275,7 @@ var addSvgElementFromJson = this.addSvgElementFromJson = function(data) {
 			"style": "pointer-events:inherit"
 		}, 100);
 	}
+	svgedit.utilities.assignAttributes(shape,{"dbinfo":"pscada.dfdf"}, 100);
 	svgedit.utilities.assignAttributes(shape, data.attr, 100);
 	svgedit.utilities.cleanupElement(shape);
 	return shape;
