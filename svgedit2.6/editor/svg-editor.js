@@ -1450,6 +1450,11 @@
 					$('#group_opacity').val(opac_perc);
 					$('#opac_slider').slider('option', 'value', opac_perc);
 					$('#elem_id').val(selectedElement.id);
+					
+					var s_dbinfo = selectedElement.getAttribute("s_dbinfo");
+					$('#s_dbinfo').val(s_dbinfo);
+					$('#onclick').val(selectedElement.getAttribute("onclick"));
+					
 				}
 				
 				updateToolButtonState();
@@ -1916,7 +1921,7 @@
 					return false;
 				}
 				
-				if (attr !== "id") {
+				if (attr !== "id" && attr.indexOf("s_")<0 && attr.indexOf("on")<0) {
 					if (isNaN(val)) {
 						val = svgCanvas.convertToNum(attr, val);
 					} else if(curConfig.baseUnit !== 'px') {
